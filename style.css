@@ -1,8 +1,13 @@
-.divcontainer{
-    display: grid;
-    grid-template-columns: 20% 80%;
-    border: 1px solid black;
+body{
+    background-color: black;
 }
-.topbar{
-    
+
+.he1{
+    color: white;
+}
+
+.toplinks{
+    color: white;
+    text-decoration: none;
+
 }
