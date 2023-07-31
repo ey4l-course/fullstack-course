@@ -1,0 +1,62 @@
+body{
+    background-color: black;
+}
+/* div{border: 1px solid white;} */
+.pageContainer{
+    position: relative;
+    width: 1280px;
+    max-width: 90%;
+    margin: auto;
+    /* border: 1px solid wheat; */
+}
+.text{
+    padding: 10%;
+}
+h1{
+    color: white;
+    text-align: center;
+    font-size: 48px;
+}
+p{
+    color: white;
+    font-size: 20px;
+    margin: auto;
+    line-height: 2;
+}
+.navLink{
+    border-style: none;
+    font-size: 30px;
+    font-weight: bold;
+    width: 20%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    float: left;
+}
+.navLink:hover{
+    background-color: gray;
+    font-weight: bolder;
+    color: white;
+}
+
+@keyframes bg {
+    from{opacity: 1; z-index: 1;}
+    to{opacity: 0.2; z-index: -1;}
+}
+.intro{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    animation-name: bg;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
