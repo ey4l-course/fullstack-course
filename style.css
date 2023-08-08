@@ -60,3 +60,10 @@ p{
     width: 100%;
     text-align: center;
 }
+.intext{
+    height: 20px;
+    width:auto;
+}
+.intext:hover{
+ size: 150%;
+}
