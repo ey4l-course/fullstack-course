@@ -59,8 +59,18 @@ p{
     bottom: 0;
     width: 100%;
     text-align: center;
+    display: inline;
 }
 .intext{
     height: 20px;
     width:auto;
+}
+.sidemenu{
+    background-color: #3583e9;
+    height: 40px;
+    width: 100%;
+    border: 2px solid black;
+    display:inline-block;
+    text-align:center;
+    vertical-align: middle;
 }
