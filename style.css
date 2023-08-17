@@ -1,13 +1,13 @@
 body{
     background-color: black;
 }
-/* div{border: 1px solid white;} */
 .pageContainer{
     position: relative;
     width: 1280px;
     max-width: 90%;
+    height: 720px;
     margin: auto;
-    /* border: 1px solid wheat; */
+    border: 1px solid white;
 }
 .text{
     padding: 10%;
@@ -37,6 +37,21 @@ p{
     font-weight: bolder;
     color: white;
 }
+.navLink2{
+    border-style: none;
+    background-color: lightgray;
+    font-size: 20px;
+    font-weight: bold;
+    width: 25%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    float: left;
+}
+.navLink2:hover{
+    background-color: white;
+    font-weight: bolder;
+    color: #555555;
+}
 
 @keyframes bg {
     from{opacity: 1; z-index: 1;}
@@ -57,9 +72,10 @@ p{
 .footer{
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
     text-align: center;
-    display: inline;
+    background-color: bisque;
 }
 .intext{
     height: 20px;
