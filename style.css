@@ -7,7 +7,10 @@ body{
     max-width: 90%;
     height: 720px;
     margin: auto;
-    border: 1px solid white;
+    /* border: 1px solid white; */
+}
+button{
+    min-height: 20px;
 }
 .text{
     padding: 10%;
@@ -30,7 +33,9 @@ p{
     width: 20%;
     padding-top: 5px;
     padding-bottom: 5px;
-    float: left;
+    margin: 0;
+    display: inline-block;
+    margin-right: -5px;
 }
 .navLink:hover{
     background-color: gray;
@@ -42,10 +47,10 @@ p{
     background-color: lightgray;
     font-size: 20px;
     font-weight: bold;
-    width: 25%;
+    width: 100%;
     padding-top: 3px;
     padding-bottom: 3px;
-    float: left;
+    /* margin-right: -5px; */
 }
 .navLink2:hover{
     background-color: white;
@@ -75,7 +80,6 @@ p{
     left: 0;
     width: 100%;
     text-align: center;
-    background-color: bisque;
 }
 .intext{
     height: 20px;
@@ -89,4 +93,31 @@ p{
     display:inline-block;
     text-align:center;
     vertical-align: middle;
+}
+.drop{
+    display: inline-block;
+    margin-right: -5px;
+    position: relative;
+    width: 25%;
+}
+.drop-cont{
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    padding: 3px;
+    z-index: 1;
+}
+.drop:hover .drop-cont {
+    display: block;
+}
+.drop-cont a, a:visited {
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+.drop-cont a:hover{
+    background-color: #3583e9;
 }
