@@ -16,30 +16,131 @@
         }
         img {
             position: relative;
-            width: 90px;
+            width: 80px;
             /* left: 600px; */
         }
-        .dealer{
+        #dealer{
             position: absolute;
-            left: 200px;
-            background-color: aliceblue;
+            left: 640px;
+            top: 40px;
+        }
+        #player{
+            position: absolute;
+            left: 640px;
+            bottom: 40px;
+            
+        }
+        .cards{
+            position: relative;    
+        }
+        .ballance{
+            position: absolute;
+            left: 40px;
+            bottom: 40px;
+        }
+        #placebet{
+            position: absolute;
+            width: 60px;
+            height: 90px;
+            bottom: 180px;
+            left: 610px;
+        }
+        .betsum{
+            position: relative;
+            width: 56px;
+            height: 40px;
+            font-size: 24px;
+            font-weight: bold;
+            box-sizing: border-box;
+            margin: 3px;
+        }
+        #betbtn{
+            text-align: center;
         }
     </style>
 </head>
 <body style="background-color: green;">
+    <script>
+        let ballance = 1000; cardused = 0; dscore = 0; pscore = 0; dace = 0; pace = 0;
+        const cards = [], valcards = [];
+        valcards[0] = 0;
+        cards[0] = "deck"
+        function bet(){
+            //reduce ballance according to bet
+            ballance = ballance - document.getElementById("betsum").value;
+            document.getElementById("ballance").innerHTML = `${ballance}$`;
+            document.getElementById("placebet").style.display = "none";
+
+            //fill the card "shoe" with 30 random cards
+            for (let i = 1; i <= 30; i++) {
+                valcards[i] = Math.floor(Math.random() * 13) + 1; //draft card value
+                let sign = Math.floor(Math.random() * 4) + 1; //draft card sign
+                switch (sign) {                                 //assign letter to card sign array
+                        case 1:
+                            cards[i] = valcards[i] + "c";
+                        break;
+                        case 2:
+                            cards[i] = valcards[i] + "d";
+                        break;
+                        case 3:
+                            cards[i] = valcards[i] + "h";
+                        break;
+                        case 4:
+                            cards[i] = valcards[i] + "s";
+                        break;            
+                    default:
+                        break;
+                }
+                //valcards[i] = valcards < 10 ? valcards[i] : 10;    ***To check why behave unexpectedly***
+                if (valcards[i] > 10) {
+                    valcards[i] = 10;            
+                }
+            }
+            while (cardused < 3) {
+                if (cardused == 1) {
+                    document.getElementById("dealer").innerHTML += `<img src="../images/cards/${cards[cardused]}.svg" id="hidden" style="left: ${cardused * (-40)}px; display: none;" alt="">`
+                } else {
+                    document.getElementById("dealer").innerHTML += `<img src="../images/cards/${cards[cardused]}.svg" style="left: ${cardused * (-40)}px;" alt="">`
+                    document.getElementById("dealer").style.left = `${620 - cardused * 20}px`;
+                }
+                if (valcards[cardused] == 1) {
+                    dace = 1;
+                }
+                dscore = dscore + valcards[cardused];
+                cardused ++;
+            }
+            while (cardused < 5) {
+                document.getElementById("player").innerHTML += `<img src="../images/cards/${cards[cardused]}.svg" style="left: ${(cardused - 2) * (-40)}px;" alt="">`
+                document.getElementById("player").style.left = `${660 - cardused * 20}px`;
+                if (valcards[cardused] == 1) {
+                    pace = 1;
+                }
+                pscore = pscore + valcards[cardused];
+                cardused ++;
+            }
+            console.log(`dealer: ${dscore} dace: ${dace} player: ${pscore} pace: ${pace}`);
+        }
+    
+    </script>
+
     <div class="pageContainer" style="background-color: darkgreen; border-radius: 20px; padding: 40px; box-sizing:border-box;">
         <img src="../images/bjbg.png" class="bg">
-        <div class="dealer">
-            <img src="../images/cards/og_card_5@2x.png" class="dcard" id="dcard1">
-            <img src="../images/cards/og_card_5@2x.png" class="dcard" id="dcard2">
-            <img src="../images/cards/og_card_5@2x.png" class="dcard" id="dcard3">
-            <img src="../images/cards/og_card_5@2x.png" class="dcard" id="dcard4">
-            <img src="../images/cards/og_card_5@2x.png" class="dcard" id="dcard5">
-            <img src="../images/cards/og_card_5@2x.png" class="dcard" id="dcard6">
-            <img src="../images/cards/og_card_5@2x.png" class="dcard" id="dcard7">
-            <img src="../images/cards/og_card_5@2x.png" class="dcard" id="dcard8">
+        <div id="placebet">
+        <input type="text" id="betsum" class="betsum">
+        <input type="button" id="betbtn" class="betsum" value="BET" onclick="bet()">
         </div>
-        <img src="../images/cards/10c.svg" alt="">
-    </div>    
+        <div class="ballance">
+            <h2>Your ballance is:</h2>
+            <h2 id="ballance">1000$</h2>
+        </div>
+        <div id="dealer">
+            <!-- <img src="../images/cards/og_card_5@2x.png" alt=""> -->
+        </div>
+        <div id="player">
+            <!-- <img src="../images/cards/og_card_5@2x.png" alt=""> -->
+        </div>
+    </div>
+    <button onclick="console.log(cards)">click</button>
+
 </body>
 </html>
