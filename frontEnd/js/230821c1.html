@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execise 1</title>
+    <style>
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr id="A"></tr>
+        <tr id="B"></tr>
+    </table>
+    <p id="C"></p>
+    <script>
+        const list = [];
+        let min = 100; max = 0;
+        for (let i = 0; i < 9; i++) {
+            list.push(Math.floor(Math.random() * 100) +1);
+            document.getElementById("A").innerHTML += `<td>${list[i]}</td>`
+        }
+        for (let i = 0; i < list.length; i++) {
+            if (list[i] % 2 === 0) {
+            document.getElementById("B").innerHTML += `<td>${list[i]}</td>`
+            }
+        }
+        for (let i = 0; i < list.length; i++) {
+            if (list[i] < min) {
+                min = list[i];
+            }
+            if (list[i] > max) {
+                max = list[i];                
+            }
+        }
+        document.getElementById("C").innerHTML = (`The smallest number is: ${min} <br> The biggest number is ${max}`);
+    </script>
+    
+</body>
+</html>

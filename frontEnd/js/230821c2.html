@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS functions loops and arrays with external file</title>
+    <script src="230821util.js"></script>
+    <style>
+        td, th, table {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr id="A"><td>Here is an array:</td></tr>
+        <tr id="B"><td>Here are the even number of the array:</td></tr>
+    </table>
+    <p id="C"></p>
+
+    <script>
+        const list = populate_array_random(10 , 200);
+        for (let i = 0; i < list.length; i++) {
+            document.getElementById("A").innerHTML += `<td>${list[i]}</td>`
+        }
+        for (let i = 0; i < list.length; i++) {
+            if (list[i] % 2 === 0){
+            document.getElementById("B").innerHTML += `<td>${list[i]}</td>`
+            }
+        }
+        document.getElementById("C").innerHTML = `The maximum value is: ${get_max(list)}<br>`;
+        document.getElementById("C").innerHTML += `The minimum value is: ${get_min(list)}`;
+                
+    </script>   
+</body>
+</html>
