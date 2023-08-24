@@ -41,8 +41,14 @@ function valid_num(input){
     }
     }
 
-function get_bigger(num1,num2){
-    num1 = document.getElementById(num1).value;
-    num2 = document.getElementById(num2).value;
-    alert(num1 == num2 ? "numbers are equal" : num1 > num2 ? `${num1} is bigger` : `${num2} is bigger`)
+function get_bigger(num1, num2){
+    num1 = parseInt(document.getElementById(num1).value);
+    num2 = parseInt(document.getElementById(num2).value);
+    alert(num1 === "" || num2 === "" ? "ERROR: missing value" : num1 == num2 ? "numbers are equal" : num1 > num2 ? `${num1} is bigger` : `${num2} is bigger`)
+}
+
+function are_equal(num1, num2){
+    num1 = parseInt(document.getElementById(num1).value);
+    num2 = parseInt(document.getElementById(num2).value);
+    alert(num1 === num2 ? `Numbers are equal. The output is ${num1 + 1}` : `Numbers ${num1} and ${num2} are not equal`)
 }
