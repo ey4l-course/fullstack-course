@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function tutorial - Home-work</title>
+    <script src="230821util.js"></script>
+    <style>
+        table {
+            width: 100%;
+            padding: 5px;
+        }
+        table, td {
+            border: 1px solid darkblue;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr id="ex1">
+            <td>
+                <h3>1. Please enter 2 numbers below. The button will return the bigger number:</h3>
+                <p>
+                <label for="param1">Please enter a number:</label>
+                <input type="text" id="param1" placeholder="0-1000" oninput="valid_num('param1')">
+                </p>
+                <p>
+                <label for="param2">Please enter a number:</label>
+                <input type="text" id="param2" placeholder="0-1000" oninput ="valid_num('param2')">
+                </p>
+                <button onclick="get_bigger('param1','param2')">Execute 1</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+
+    </script>
+</body>
+</html>

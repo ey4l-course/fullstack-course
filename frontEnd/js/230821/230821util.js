@@ -25,3 +25,24 @@ function get_max(list){
     }
     return max;
 }
+
+function valid_num(input){
+    let val = document.getElementById(input);
+    if (val.value === ""){
+        document.getElementById(input).style.backgroundColor = "white";
+    }
+    else{
+        if (isNaN(val.value)){
+            document.getElementById(input).style.backgroundColor = "red";
+        }
+        else{
+            document.getElementById(input).style.backgroundColor = "lightgreen";
+            }
+    }
+    }
+
+function get_bigger(num1,num2){
+    num1 = document.getElementById(num1).value;
+    num2 = document.getElementById(num2).value;
+    alert(num1 == num2 ? "numbers are equal" : num1 > num2 ? `${num1} is bigger` : `${num2} is bigger`)
+}
