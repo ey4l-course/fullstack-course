@@ -88,6 +88,22 @@ function is_even(){
     alert(x % 2 === 0 ? `${x} is even` : `${x} is odd`)
 }
 
-// function are_equal2(){
-
-// }
+function are_equal2(){
+    const list = pop_inpt(4, 5);
+    let flag = 0;
+    if ( list[0] === list[1] && list[1] === list[2] && list[2] === list[3]) {
+        alert ("All numbers are equal");
+    }
+    else{
+        for (let index = 0; index < list.length; index ++) {
+            if (flag ===1) {break;}
+            for (i = index + 1; i < list.length; i ++){
+                if (list[i] === list[index]){
+                    flag = 1;
+                    break;
+                }
+            }
+        }
+        alert(flag === 1 ? "There is a pair of equal numbers" : "Every number is unique");
+    }
+}
