@@ -19,7 +19,7 @@
     <table>
         <tr id="ex1">
             <td>
-                <h3>1. Please enter 2 numbers below. The button will return the bigger number:</h3>
+                <h3>1 (and 2). Please enter 2 numbers below. The button will return the bigger number:</h3>
                 <p>
                 <label for="param1">Please enter a number:</label>
                 <input type="text" id="param1" placeholder="0-1000" oninput="valid_num('param1')">
@@ -30,6 +30,45 @@
                 </p>
                 <button onclick="get_bigger('param1','param2')">Execute exersize 1</button>
                 <button onclick="are_equal('param1','param2')">Execute exersize 2</button>
+            </td>
+        </tr>
+        <tr id="ex3">
+            <td>
+                <h3>3. Please enter 4 numbers</h3>
+                <label for="param3.1">Please enter a number:</label>
+                <input type="text" id="param3.1" placeholder="0-1000" oninput="valid_num('param3.1')">
+                <label for="param3.2">Please enter a number:</label>
+                <input type="text" id="param3.2" placeholder="0-1000" oninput="valid_num('param3.2')">
+                <label for="param3.3">Please enter a number:</label>
+                <input type="text" id="param3.3" placeholder="0-1000" oninput="valid_num('param3.3')">
+                <label for="param3.4">Please enter a number:</label>
+                <input type="text" id="param3.4" placeholder="0-1000" oninput="valid_num('param3.4')">
+                <button onclick="get_lowest()">Execute exesize 3</button>
+                <button onclick="reset(3)">Clear form</button>
+            </td>
+        </tr>
+        <tr id="ex4">
+            <td>
+                <h3>4. Please enter 1 number</h3>
+                <label for="param4">Please enter a number (decimals will be ignored):</label>
+                <input type="text" id="param4" placeholder="0-1000" oninput="valid_num('param4')">
+                <button onclick="is_even()">Execute 4</button>
+            </td>
+        </tr>
+        <tr ex5>
+            <td>
+                <h3>5. Please enter four numbers:</h3>
+                <label for="param5.1">Please enter a number:</label>
+                <input type="text" id="param5.1" placeholder="0-1000" oninput="valid_num('param5.1')">
+                <label for="param5.2">Please enter a number:</label>
+                <input type="text" id="param5.2" placeholder="0-1000" oninput="valid_num('param5.2')">
+                <label for="param5.3">Please enter a number:</label>
+                <input type="text" id="param5.3" placeholder="0-1000" oninput="valid_num('param5.3')">
+                <label for="param5.4">Please enter a number:</label>
+                <input type="text" id="param5.4" placeholder="0-1000" oninput="valid_num('param5.4')">
+                <button onclick="are_equal2()">Execute exesize 5</button>
+                <button onclick="reset(5)">Clear form</button>
+
             </td>
         </tr>
     </table>
