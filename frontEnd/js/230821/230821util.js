@@ -107,3 +107,39 @@ function are_equal2(){
         alert(flag === 1 ? "There is a pair of equal numbers" : "Every number is unique");
     }
 }
+
+function is_weekday(input,) {
+    let day = document.getElementById(input);
+    let result;
+    console.log(typeof(day.value))
+    if (day.value === ""){
+        document.getElementById(input).style.backgroundColor = "white";
+    }
+    else{
+        if (day.value > 0 && day.value < 8){
+            document.getElementById(input).style.backgroundColor = "lightgreen";
+            switch (parseInt(day.value)){
+                case 1: result = "Sunday";
+                break;
+                case 2: result = "Monday";
+                break;
+                case 3: result = "Tuesday";
+                break;
+                case 4: result = "Wednday";
+                break;
+                case 5: result = "Thursday";
+                break;
+                case 6: result = "Friday";
+                break;
+                case 7: result = "Saturday";
+                break;
+                default: result = "ERROR";
+            }
+            console.log(result);
+        }
+        else{
+            document.getElementById(input).style.backgroundColor = "red";
+            }
+    }
+}
+

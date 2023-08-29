@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .board {
+            display: grid;
+            grid-template-columns: repeat(10, 50px);
+            grid-gap: 2px;
+            margin-top: 20px;
+        }
+        .cell {
+            width: 50px;
+            height: 50px;
+            font-size: 12px;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="board" id="board"></div>
+    <script>
+        const init = []
+        for (let index = 0; index < 10; index++) {
+            document.getElementById('board').innerHTML +=`<div class="cell"
+            id="cell-${index}" onclick="cell_click(${index})">${index}</div>`;
+        }
+
+        const board = (new Array(10).fill(-1, 0, 10));
+        function cell_click(cell_num){
+            board[cell_num] = 'x';
+            document.getElementById(`cell-${cell_num}`).innerHTML = 'x'
+            if (board.some(cell => cell != 'x') == false) {
+                alert("FINISHED!!!");
+            }
+        }
+    </script>
+</body>
+</html>
