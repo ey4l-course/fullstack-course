@@ -80,6 +80,29 @@
                 <input type="text" id="weekday" placeholder="1 - 7" oninput="is_weekday('weekday')">
             </td>
         </tr>
+<!-- Write a function that receives a number between 1 to 12.
+Each number represents each month of the year.
+The function has to return the number of the days in the month. If the number given
+is not between 1 to 12, then the functions -1.
+January, March, May, July, August, October, December -> 31 days in a month.
+February -> 28 days in a month.
+April, June, September, November -> 30 days in a month.
+Ex:
+if the number is 1, it means that the user wants to know how many days there are in
+January month.
+if the number is 2, it means that the user wants to know how many days there is in
+February month.
+If the input is 7, the output must be 31.
+If the input is 2, the output must be 28.
+(8) Write a function that uses global variables.
+(9) Write a function that uses local variables. -->
+        <tr id="ex7">
+            <td>
+                <h3>7. Please enter a number between 1-12 to represent a month.</h3>
+                <input type="text" id="month" placeholder="1 - 12" oninput="valid_num('month')">
+                <button onclick="which_month('month')">Click me!!!</button>
+            </td>
+        </tr>
     </table>
     <script>
 

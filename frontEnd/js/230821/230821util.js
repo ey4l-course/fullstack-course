@@ -135,11 +135,24 @@ function is_weekday(input,) {
                 break;
                 default: result = "ERROR";
             }
-            console.log(result);
+            document.getElementById("ex6").innerHTML += `<td>${result}</td>`
         }
         else{
             document.getElementById(input).style.backgroundColor = "red";
             }
     }
 }
+const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+function which_month(num){
+    let input = document.getElementById(num).value;
+    alert(`Your month has ${months[(input-1)]}`);
+}
+
+//same as above with local variables:
+
+/*function which_month(num){
+    const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    let input = document.getElementById(num).value;
+    alert(`Your month has ${months[(input-1)]}`);
+}*/
 
