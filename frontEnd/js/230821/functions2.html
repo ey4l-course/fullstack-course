@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function tutorial (switch case) - Home-work</title>
+</head>
+<body>
+    <script>
+        //build the page
+        for (let i = 0; i < 7; i ++){
+            document.write(`<button onclick='Answer${i+1}()'>Question #${i+1}</button><br>`);
+        }
+
+//Ex 1:
+//Write a function with switch-case.
+//The function receives a number and return string saying if the number given is even or odd.
+        function Answer1(){
+            function odd_or_even(num){
+                switch (num % 2 == 0){
+                    case true: return "even";
+                    case false: return "odd";
+                }
+            }
+            let input = parseInt(prompt("Please enter a number: (q1)"));
+            alert(`The answer to q1 is: ${odd_or_even(input)}`)
+        }
+
+//Ex2:
+// Write a function with switch-case.
+// The function receives a number and return string saying
+//if the number given is negative or positive.
+              
+        function Answer2(){
+            function is_positive(num){
+                switch (true){
+                    case num > 0: return "Positive";
+                    case num < 0: return "Negative";
+                    case num == 0: return "Zero";
+                }
+            }
+            let input = parseInt(prompt("Please enter a number: (q2)"));
+            alert(`The answer to q1 is: ${is_positive(input)}`)
+        }
+
+// Ex 3:
+// Write a function with switch-case.
+// The function receives one number, if the number is between
+//1 to 17, then the function will return the specific day,
+//otherwise the function will return “please enter another
+//number”.
+
+function Answer3(){
+            function weekday(num){
+                switch (num){
+                    case 1: return "Sunday";
+                    case 2: return "Monday";
+                    case 3: return "Tuesday";
+                    case 4: return "Wednsday";
+                    case 5: return "Thursday";
+                    case 6: return "Friday";
+                    case 7: return "Saturday";
+                    default: return "Please follow the instructions!!! pick another number!"
+                }
+            }
+            let input = parseInt(prompt("Please enter a number between 1-7: (q3)"));
+            alert(`The answer to q1 is: ${weekday(input)}`)
+        }
+
+
+// Ex 4:
+// Write a function with switch-case.
+// The function receives one number, if the number is between
+//1 to 12, then the function will return the specific month,
+//otherwise the function will return
+//“please enter another number”.
+
+function Answer4(){
+            function month(num){
+                switch (num){
+                    case 1: return "Jan";
+                    case 2: return "Feb";
+                    case 3: return "Mar";
+                    case 4: return "Apr";
+                    case 5: return "May";
+                    case 6: return "Jun";
+                    case 7: return "Jul";
+                    case 8: return "Aug";
+                    case 9: return "Sep";
+                    case 10: return "Oct";
+                    case 11: return "Nov";
+                    case 12: return "Dec";
+                    default: return "Please follow the instructions!!! pick another number!"
+                }
+            }
+            let input = parseInt(prompt("Please enter a number between 1-12: (q4)"));
+            alert(`The answer to q1 is: ${month(input)}`)
+        }
+
+
+// Ex 5:
+// Write a function with switch-case.
+// The function receives a letter and has to check if the
+//letter is a vowel or a consonant. The vowel letters are:
+//a,e,i,o,u,y and the rest of the letters a consonant.
+
+function Answer5(){
+            function consonant_or_vowel(char){
+                switch (char){
+                    case "a":  
+                    case "e": 
+                    case "i":
+                    case "o":
+                    case "u":
+                    case "y": return "vowel";
+                    default: return "consonant"
+                }
+            }
+            let input = prompt("Please enter a letter: (q5)");
+            alert(`The answer to q1 is: ${consonant_or_vowel(input)}`)
+        }
+
+//         Ex 6:
+// Write a function with switch-case.
+// The function receives a number between 0 to 100.
+// If the number is between 0 to 20, the function returns : “D”.
+// If the function is between 21 to 55, the function returns : “C ”.
+// If the function is between 56 to 70, the function returns : “B ”.
+// If the function is between 71 to 90, the function returns : “A ”.
+// If the function is between 90 to 100, the function returns : “A+ ”.
+
+function Answer6(){
+            function grade(num){
+                switch (true){
+                    case num <= 20: return "F";
+                    case num <= 55: return "C";
+                    case num <= 70: return "B";
+                    case num <= 90: return "A";
+                    default: return "A+"
+                }
+            }
+            let input = parseInt(prompt("Please enter a grade: (q6)"));
+            alert(`The answer to q1 is: ${grade(input)}`)
+        }
+
+/*        Ex 7:
+Write a function with switch-case.
+The function receives 3 parameters(2 integer numbers and
+number between 1 to 4).
+number 1 -> addition
+number 2 -> subtraction
+number 3 -> division
+number 4 -> multiplication
+For example, if the third parameter is 4, the function 
+returns the first parameter * the second
+parameter.
+If the third parameter is 2, the function returns the first
+parameter - the second parameter.
+*/
+function Answer7(){
+            function grade(num1, num2, num3){
+                switch (num3){
+                    case 1: return num1 + num2;
+                    case 2: return num1 - num2;
+                    case 3: return num1 * num2;
+                    case 4: return num1 / num2;
+                    default: return "Please follow the instructions!!! pick another number!"
+                }
+            }
+            let input1 = parseInt(prompt("Please enter a number: (q7)"));
+            let input2 = parseInt(prompt("Please enter a number: (q7)"));
+            let input3 = parseInt(prompt("Please enter a number betwwen 1-4: (q7)"));
+            alert(`The answer to q1 is: ${grade(input1, input2, input3)}`)
+        }
+
+    </script>
+</body>
+</html>
