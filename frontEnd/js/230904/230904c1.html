@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="230904utils.js"></script>
+</head>
+<body>
+
+    <script>
+        const person = {
+            FirstName: 'Dany',
+            LastName: 'Shovevani',
+            PrintFullName(){
+                document.getElementById('result').textContent = 
+                            `${this.FirstName} ${this.LastName}`;
+            },
+            GetAge(){
+                this.Age = parseInt(prompt("Enter Dany's age:"));
+            },
+            CalcAge(){
+                document.getElementById('result').textContent =
+                        `${this.FirstName} is ${this.Age} Y.O., in 10 ten years he will be ${this.Age + 10}`;
+            },
+            PrintObj(){
+                document.getElementById('result').textContent = JSON.stringify(this)
+            }
+        }        
+    </script>
+    <button onclick="person.PrintFullName()">full name</button>
+    <button onclick="person.GetAge()">Get Age</button>
+    <button onclick="person.CalcAge()">age in 10 years</button>
+    <button onclick="person.PrintObj()">stringify</button>
+    <div id="result"></div>
+    
+</body>
+</html>

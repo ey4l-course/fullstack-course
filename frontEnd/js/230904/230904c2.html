@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to oop</title>
+</head>
+<body>
+    <!-- <button onclick="alert(equal(point1, point2))">check!</button> -->
+    <script>
+        function createPoint(){
+            let x = parseFloat(prompt('Enter X:'));
+            let y = parseFloat(prompt('Enter Y:'));
+            const point = {
+                x,
+                y,
+                print(){
+                    console.log(`[${this.x},${this.y}]`);
+                },
+                equal(point){
+                    return this.x + this.y == point.x + point.y;
+                }
+            }
+            return point;
+        }
+        let point1 = createPoint();
+        let point2 = createPoint();
+        point1.print()
+        point2.print()
+        console.log(point1.equal(point2))
+
+        // alert(`point 1: [${point1.x},${point1.y}]
+        //     point 2: [${point2.x},${point2.y}]`)
+    </script>
+    
+</body>
+</html>
