@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="_arr"></p>
+    <script>
+    const arr2 = (new Array (20)).fill(0,0,20).map(element => element = Math.floor(Math.random() * 100) + 1);
+    const arr4 = arr2.map(element => element < 10 ? element + 5 : element)
+    // const arr4 = arr2.map(fu)
+    // function fu(element){
+    //     return element < 10 ? element + 5 : element;
+    // }
+    </script>
+</body>
+</html>

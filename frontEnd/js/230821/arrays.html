@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <style>
+        #container{
+            display: flex;
+            flex-flow: column wrap;
+        }
+        .Res{
+            margin: auto;
+            border-bottom: 1px solid black;
+        }
+        button {
+            height: 25px;
+            width: 100px;
+            margin: auto;
+            margin-bottom: 10px;
+            display: block;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+            <div class="Res" id="Ans1">
+                <h3>Ex1:</h3>
+                <p>
+                1 - Create an array of strings containing all the days of the week and print it. <br>
+                2 - Sort the array and print it. <br>
+                3 - Create a function to print the array and another function that receives an array and sorts it. <br>
+                </p>
+                <button onclick="arr1.forEach(element => document.getElementById('Ans1').innerHTML += `${arr1.indexOf(element)}. ${element}</p>`);">See result</button>
+
+            </div>
+            <div class="Res" id="Ans2">
+                <h3>Ex2:</h3>
+                <p>
+                1 - Create a function that receives an integer array and number as parameters (will be used
+                as index of array). <br>
+                2 - Print the value of the array by the number value you got. <br>
+                **For example if the number is 2 you should print the value in the array of index 2. <br>
+                3 - In case the number is not in the array index range you should print “Sorry, no value in the
+                array for index number: {number}” <br>
+                </p>
+                <button onclick="document.getElementById('show_array').innerHTML += `The array is: ${arr2}<br>`">Show array</button>
+                <p id="show_array"></p>
+                <p><input type="number" id="num2" placeholder="Please pick a number"></p>
+                <button onclick='find_index(arr2, document.getElementById("num2").value)'>SUBMIT</button>
+
+            </div>
+            <div class="Res" id="Ans3">
+                <h3>Ex3:</h3>
+                <p>
+                Create a function that receives an integer array. If all the values of the array are odd, <br>
+                then the function returns “odds”, otherwise “not odds”.
+                </p>
+                <p>Enter numbers. to finish program enter any character that isn't a number:</p>
+                <p><input type="number" id="num3" placeholder="Please pick a number"></p>
+                <button onclick='pop_by_input(arr3, parseInt(document.getElementById("num3").value))'>SUBMIT</button>
+            </div>
+            <div class="Res" id="Ans4">
+                <h3>Ex4:</h3>
+                <p>Create a function that receives an integer array.</p>
+                <p>for each element in the array check If the value of the index is smaller than 10 → add 5 to that value.</p>
+                <p>Print the array.</p>
+                    <button onclick="document.getElementById('txt4').innerHTML = arr2">Show array</button>
+                    <p id="txt4"></p>
+                    <button onclick="document.getElementById('txt4result').innerHTML = arr4">Print array</button>
+                    <p id="txt4result"></p>
+                
+            </div>
+            <div class="Res" id="Ans5">
+                <h3>Ex5:</h3>
+                <p>
+                Create a function that receives an integer array and int number. <br>
+                If the value of the second parameter is in the array, the function returns “found” otherwise <br>
+                “not found”.
+                </p>
+                <button onclick="is_in_list(arr5)">GO!</button>
+            </div>
+            <div class="Res" id="Ans6">
+                <h3>Ex6:</h3>
+                <p>
+                Create a function that receives an array and 2 numbers of type integer. <br>
+                If the first value of the array is equal to the first parameter and the last value of the array is <br>
+                equal to the second parameter then the function returns true, otherwise, the function returns
+                false.
+                </p>
+                <button onclick="is_weird_condition(arr6)">GO!</button>
+            </div>
+            <div class="Res" id="Ans7">
+                <h3>Ex7:</h3>
+                <p>
+                    <ol>
+                        <h5>Create a function that receives an array.</h5>
+                        <li>If all the values of the array are smaller than 50, the function returns “smaller than 50”.</li>
+                        <li>If all the values of the array are between 51 to 100, the function returns “ between 51 to 100”.</li>
+                        <li>If all the values of the array are between 101 to 200, the function returns “between 101 to 200”.</li>
+                        <li>If all the values of the array are greater than 201, the function returns “greater than 200”.</li>
+                        <li>If none of the conditions above is happening your function should print “No condition is happening”.</li>
+                    </ol>
+                    <button onclick="another_weird()">GO! GO! GO!</button>
+                </p>
+            </div>
+    </div>
+    <script>
+    function weekday(num){
+        switch (num){
+            case 1: return "Sunday";
+            case 2: return "Monday";
+            case 3: return "Tuesday";
+            case 4: return "Wednsday";
+            case 5: return "Thursday";
+            case 6: return "Friday";
+            case 7: return "Saturday";
+        }
+    }
+
+    function pop_day_num(value, index){
+        return index + 1;
+    }
+
+    const arr1 = (new Array (7)).fill(0, 0, 7).map(pop_day_num).map(weekday);
+
+//Ex 2
+
+    const arr2 = (new Array (20)).fill(0,0,20).map(element => element = Math.floor(Math.random() * 50) + 1);
+    
+    function find_index(arr2, usr_inpt){
+    // let usr_inpt = document.getElementById('num2').value;
+    alert(`The value in index ${usr_inpt} is ${arr2[usr_inpt]}`)
+    }
+//Ex 3
+    let arr3 = []
+    function pop_by_input(arr3, element){
+        if (!isNaN(element)){
+            arr3.push(element);
+        }
+        else{
+            alert(arr3.every(element => element % 2 != 0) ? "odds" : "not odds")
+        }
+    }
+//Ex4
+    const arr4 = arr2.map(element => element < 10 ? element + 5 : element)
+    // const arr4 = arr2.map(fu)
+    // function fu(element){
+    //     return element < 10 ? element + 5 : element;
+    // }
+
+//Ex5
+    const arr5 = (new Array (10)).fill(0,0,20).map(element => element = Math.floor(Math.random() * 30) + 1);
+    function is_in_list (list){
+        let x = parseInt(prompt("Pick a number between 1-30:"))
+        let flag = "Not found"
+        for (let element of list){
+            if (element == x) {
+                flag = "found"
+            }
+        }
+        alert(flag)
+    }
+
+//Ex6
+    const arr6 = (new Array (8)).fill(0,0,8).map(element => element = Math.floor(Math.random() * 15) + 1);
+    function is_weird_condition(list){
+        let first = parseInt(prompt("Enter first number:"));
+        let last = parseInt(prompt("Enter Second number:"));
+        if (list[0] == first && list[list.length -1] == last){
+            alert("TRUE")
+        }
+        else{
+            alert("FALSE")
+        }
+    }
+
+//Ex7
+    function another_weird(){
+        const arr7 = [];
+        let i = 0;
+        while (true){
+            arr7[i] = parseInt(prompt("Enter a number (To stop enter 'x':)"))
+            if (isNaN(arr7[i])){
+                arr7.pop();
+                break;
+            }
+            i ++;
+        }
+        arr7.sort(function(a, b){return a- b})
+        switch (true) {
+            case arr7[arr7.length - 1] <= 50:
+                    alert("Less then 50")
+                break;
+                case arr7[1] > 50 && arr7[arr7.length - 1] <= 100:
+                    alert("Between 50 - 100")
+                break;
+                case arr7[1] > 100 && arr7[arr7.length - 1] <= 200:
+                    alert("Between 100 - 200")
+                break;
+                case arr7[1] > 200:
+                    alert("More then 200")
+                break;
+        
+            default:
+                alert("No condition is met")
+                break;
+        }
+    }
+
+    </script>
+</body>
+</html>
