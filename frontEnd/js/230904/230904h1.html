@@ -12,8 +12,8 @@
 
 </head>
 <body>
-    <div id="formContainer">
-        <h3>Car ID: <span id="counter">0000</span></h3>
+    <div id="formContainer" class="formContainer">
+        <h3>Car ID: <span id="counter" class="counter">0000</span></h3>
         <p><label for="brand">brand: </label><input type="text" maxlength="15" size="15" id="brand"></p>
         <p><label for="model">model: </label><input type="text" maxlength="20" size="20" id="model"></p>
         <p><label for="price">price: </label><input type="text" size="8" id="price">$</p>
@@ -30,11 +30,13 @@
                 
             </table>
         </p>
-        <div id="buttons">
+        <div class="buttons">
         <button onclick="addCar()">Add vehicle</button>
-        <button onclick="">Reset</button>
+        <button onclick="carRes()">Reset</button>
         </div>
     </div>
     
+    <script>
+    </script>
 </body>
 </html>

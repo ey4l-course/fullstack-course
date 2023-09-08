@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects and Classes 2</title>
+    <link rel="stylesheet" href="s230904h1.css">
+    <link href="https://fonts.cdnfonts.com/css/calculator" rel="stylesheet">
+    <style>@import url('https://fonts.cdnfonts.com/css/calculator');</style>
+    <script src="util230904.js"></script>
+    <script src="Phone.js"></script>
+</head>
+<body>
+    <div id="formContainer" class="formContainer">
+        <h3>Phone ID: <span id="phoneCounter" class="counter">0000</span></h3>
+        <p><label for="phoneBrand">Brand: </label><input type="text" maxlength="15" size="15" id="phoneBrand"></p>
+        <p><label for="phoneModel">Model: </label><input type="text" maxlength="20" size="20" id="phoneModel"></p>
+        <p><label for="color">Color: </label><input type="text" id="color"></p>
+        <p><label for="storage">Price: </label><input type="text" size="4" id="storage">&#8362</p>
+        <p>
+            <label for="battery">Battery: </label>
+            <input type="range" id="battery" name="battery" oninput="batNum()" min="0" max="100">
+            <span id="batteryNum">100%</span>
+        </p>
+        <p>
+            <h4>Power:</h4>
+            <input type="radio" id="powerOn" name="phonePower" value="On">
+            <label for="powerOn">On</label>
+            <input type="radio" id="powerOff" name="phonePower" value="Off">
+            <label for="powerOff">Off</label>
+        </p>
+        <div class="buttons">
+            <button onclick="addPhone()">Add phone</button>
+            <button onclick="phoneRes()">Reset</button>
+        </div>    
+    </div>
+    <script>
+        function batNum(){
+            let val = document.getElementById("battery").value;
+            document.getElementById("batteryNum").textContent = `${val}%`
+        }
+    </script>
+</body>
+</html>

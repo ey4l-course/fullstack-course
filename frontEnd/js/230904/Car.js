@@ -8,4 +8,9 @@ class Car{
         this.colour = document.getElementById('colour').value
         this.maintenance = maintenance_list
     }
+    res(){
+        for (let element in this){
+            document.getElementById(element).value = ""
+        }
+    }
 }

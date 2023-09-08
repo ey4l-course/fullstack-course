@@ -5,16 +5,16 @@ h3 {
     text-align: center;
                                                 
 }
-#counter{
+.counter{
     background-color: lightgray;
     font-size: 24px;
     font-family: 'Calculator', sans-serif;
 }
-#buttons{
+.buttons{
     margin: auto;
     text-align: center;
 }
-#formContainer{
+.formContainer{
     margin: auto;
     padding: 5px;
     background-color:bisque;
