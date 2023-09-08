@@ -1,0 +1,22 @@
+p{
+    text-transform: capitalize;
+}
+h3 {
+    text-align: center;
+                                                
+}
+#counter{
+    background-color: lightgray;
+    font-size: 24px;
+    font-family: 'Calculator', sans-serif;
+}
+#buttons{
+    margin: auto;
+    text-align: center;
+}
+#formContainer{
+    margin: auto;
+    padding: 5px;
+    background-color:bisque;
+    width: 400px;
+}
