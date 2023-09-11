@@ -6,7 +6,9 @@
     <title>Intro to AJAX</title>
 </head>
 <body>
-    <button onclick="clickMe()">Click me!</button>
+    <button onclick="clickMe()">Click me!</button><br>
+    <label for="SiteID"></label><input id="siteID" type="text" placeholder="www.example.com">
+    <button onclick="clickMe2()">Click me!(2)</button>
     <div id="res"></div>
     <script>
 
@@ -14,6 +16,24 @@
         let req = new XMLHttpRequest();
 
         req.open("GET", "https://randomuser.me/api/")
+
+        req.onload = function (){
+            if (req.status == 200){
+                document.getElementById('res').innerHTML += this.responseText;
+            }
+            else{
+                document.getElementById('res').textContent += (`Error: ${req.status}`)
+            }
+        }
+
+        req.send();
+
+        document.getElementById("res").textContent = 'LOADING';
+    }
+    function clickMe2(){
+        const req = new XMLHttpRequest();
+        const $site = document.getElementById('siteID').value;
+        req.open("GET", $site)
 
         req.onload = function (){
             if (req.status == 200){
