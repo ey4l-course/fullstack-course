@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch Posts and Display in Table (XHR)</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Users</h1>
+    <table>
+        <thead id="tableHead">
+            <tr>
+                <!-- <th>ID</th>
+                <th>Title</th>
+                <th>Body</th> -->
+            </tr>
+        </thead>
+        <tbody id="post-table-body">
+        </tbody>
+    </table>
+
+    <script>
+        
+        // use this structure to get
+        // items from user:
+        // https://jsonplaceholder.typicode.com/users
+        // pay attenetion to the fields
+
+        const postTableBody = document.getElementById('post-table-body');
+        const tableHead = document.getElementById('tableHead');
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
+
+        xhr.onload = function () {
+            // console.log(xhr);
+            if (xhr.status >= 200 && xhr.status < 300) {
+                const data = JSON.parse(xhr.responseText).slice(0, 10);
+                // console.log(data);
+                for (const key in data[0]){
+                    const dataKey = document.createElement('th');
+                    dataKey.textContent = key;
+                    tableHead.appendChild(dataKey)
+                }
+                
+                for (let post in data) {
+                    const row = document.createElement('tr');
+                    // let tableRow = `table_row${post}`
+                    // row.id = tableRow;
+                    for (const key in data[post]){
+                    const dataKey = document.createElement('td');
+                    dataKey.textContent = data[post][key];
+                    row.appendChild(dataKey)
+                    }
+
+                    // row.innerHTML = `
+                    //     <td>${post.id}</td>
+                    //     <td>${post.title}</td>
+                    //     <td>${post.body}</td>
+                    // `;
+                    postTableBody.appendChild(row);
+                };
+            } else {
+                console.error('Failed to fetch data:', xhr.status, xhr.statusText);
+            }
+        };
+
+        xhr.onerror = function () {
+            console.error('Network error occurred');
+        };
+
+        xhr.send();
+
+    </script>
+</body>
+</html>
