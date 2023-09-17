@@ -40,22 +40,23 @@ class Game{
             document.getElementById(tileID).textContent = this.$turn;
             this.$board[ID] = this.$turn;
             document.getElementById(tileID).classList = 'ocupied_tiles';
-            this.$turn = (this.$turn == "X" ? "O" : "X");
             this._is_win();
+            this.$turn = (this.$turn == "X" ? "O" : "X");
         }
     }
     _is_win(){
         this.$wincondition.forEach((condition) => {
-            console.log("Condition[0]:", this.$board[condition[0]]);
-            console.log("Condition[1]:", this.$board[condition[1]]);
-            console.log("Condition[2]:", this.$board[condition[2]]);
+            // console.log("Condition[0]:", this.$board[condition[0]]);
+            // console.log("Condition[1]:", this.$board[condition[1]]);
+            // console.log("Condition[2]:", this.$board[condition[2]]);
            if (this.$board[condition[0]] == this.$board[condition[1]] && 
                 this.$board[condition[1]] == this.$board[condition[2]] &&
-                this.$board[condition[0] !== '0']){
-                    console.log(`Player ${this.$turn} wins!!!`)
-            }
-            else{
-                console.log("test");
+                this.$board[condition[0]] !== 0){
+                    const announce = document.createElement('div');
+                    const bbody = document.getElementById("pagebody");
+                    announce.id = 'win';
+                    announce.textContent = `Player ${this.$turn} wins!!!`
+                    bbody.appendChild(announce);
             }
         })
     }
