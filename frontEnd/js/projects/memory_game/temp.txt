@@ -1,0 +1,9 @@
+flags: https://restcountries.com/v3.1/all
+pokemon: https://pokeapi.co/api/v2/pokemon?limit=200%27
+HP: https://hp-api.onrender.com/api/characters
+
+1. Update "end game" rendering to deal with a draw
+2. Fix reset
+3. Create computer player logic
+4. Update APIs
+5. Graphics

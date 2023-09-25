@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory game</title>
+    <link rel="stylesheet" href="mem.css">
+    <script src="GUI.js"></script>
+    <script src="Player.js"></script>
+    <script src="Game.js"></script>
+    <script src="Card.js"></script>
+    <script src="mem.js"></script>
+</head>
+<body>
+        <div id="_MainMenu">
+            <div id="_ChooseDeck" class="_Menu">
+                <div id="_HP" class="_MenuItem">Harry Potter</div>
+                <div id="_Pokemon" class="_MenuItem">Pokemon</div>
+                <div id="_Flags" class="_MenuItem">Flags</div>
+            </div>
+            <div id="_GameMode" class="_Menu">
+                <div id="_Single" class="_MenuItem">Single player</div>
+                <div id="_Multiple" class="_MenuItem">Multi player</div>
+            </div>
+            <div id="_Difficulty" class="_Menu">
+                <div id="_Beginner" class="_MenuItem">Beginner</div>
+                <div id="_Advanced" class="_MenuItem">Advanced</div>
+                <div id="_Expert" class="_MenuItem">Expert</div>
+                <div id="_Brainiac" class="_MenuItem">Brainiac</div>
+            </div>
+            <div class="_Menu">
+                <div id="_StartGame" class="_MenuItem">GO!</div>
+            </div>
+
+        </div>
+        <div id="_GameBoard">
+            <div id="_GameHeader"></div>
+            <div id="_Game"></div>
+            <div id="_GameControlPanel">
+                <div id="_ActivePlayer">Player 1</div>
+                <div id="Score">
+                    Score: <br>
+                    Player1:<span id="_P1" class="_ScoreBoard">00</span>
+                    Player1:<span id="_P2" class="_ScoreBoard">00</span>
+                    <!-- <div id="_P2" class="_ScoreBoard">Player2: 00</div> -->
+                </div>
+            </div>
+        </div>
+</body>
+</html>
