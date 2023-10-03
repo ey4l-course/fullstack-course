@@ -7,6 +7,7 @@ class Gui{
         this.$gameModeIMG = "";
         this.$gameDiffIMG = "";
         this.$gameHeader = "";
+        this.$deckAPI = "";
     }
     // <img class="_DeckStyle" src="image/harry-potter-logo-32541.png">
     // <img class="_DeckStyle" src="image/picachuCard.png">
@@ -64,15 +65,18 @@ class Gui{
                 this.$cardDeck = "Harry Potter";
                 this.$cardDeckIMG = '<img class="_DeckStyle" src="image/harry-potter-logo-32541.png">'
                 this.$gameHeader = '<img class="_GameHeaderIMG" src="image/HPHeader.png" alt="HP header">'
+                this.$deckAPI = 'https://hp-api.onrender.com/api/characters'
                 break;
             case "_Pokemon":
                 this.$cardDeck = "Pokemon";
                 this.$cardDeckIMG = '<img class="_DeckStyle" src="image/picachuCard.png">'
                 this.$gameHeader = '<img class="_GameHeaderIMG" src="image/pokemonHeader.png" alt="Pokemon header">'
+                this.$deckAPI = 'https://pokeapi.co/api/v2/pokemon/'
                 break;
             case "_Flags":
                 this.$cardDeck = "State flags";
                 this.$gameHeader = "State flags"
+                this.$deckAPI = 'https://restcountries.com/v3.1/all'
                 break;
         }
         this.$gameMode = (mode == "_Single" ? "Single player" : "Multi-player");

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj =[];
+        const req = new XMLHttpRequest;
+        req.onload = function(){
+            obj = JSON.parse(this.responseText)
+            // document.write(`<img src=${obj[0].sprites.other.dream_world.front_default}>`)
+            checkImage(obj);
+        }
+        // req.open("GET", "https://pokeapi.co/api/v2/pokemon?limit=200%27");
+        req.open("get", 'https://hp-api.onrender.com/api/characters');
+        req.send();
+        function checkImage(list){
+            const hasimg = [];
+            for (let char in list){
+                if (list[char].image != ""){
+                    hasimg.push(list[char]);
+                };
+            }
+        }
+    </script>
+    
+</body>
+</html>

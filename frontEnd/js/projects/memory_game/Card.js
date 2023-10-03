@@ -13,6 +13,9 @@ class Card{
             return;
         }
         this.$state = "down";
-        document.getElementById(this.$position).textContent = "";
+        document.getElementById(this.$position).innerHTML = newGameUI.$cardDeckIMG;
+    }
+    setCardImageHP(){
+        this.$image = ""
     }
 }
