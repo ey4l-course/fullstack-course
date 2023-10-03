@@ -3,11 +3,17 @@ class Gui{
         this.$cardDeck = "";
         this.$gameMode = "";
         this.$gameDiff = "";
-        // this.$cardDeck = "";
-        // this.$gameMode = "";
-        // this.$gameDiff = "";
+        this.$cardDeckIMG = "";
+        this.$gameModeIMG = "";
+        this.$gameDiffIMG = "";
+        this.$gameHeader = "";
     }
-    
+    // <img class="_DeckStyle" src="image/harry-potter-logo-32541.png">
+    // <img class="_DeckStyle" src="image/picachuCard.png">
+    // <img class="_GameHeaderIMG" src="image/HPHeader.png" alt="HP header">
+    // <img class="_GameHeaderIMG" src="image/pokemonHeader.png" alt="Pokemon header">
+
+
     openMenu(param){
         this.clearOldParams();
         document.getElementById(param).style.display = "block"; //Show menu
@@ -56,12 +62,17 @@ class Gui{
         switch (deck){
             case "_HP":
                 this.$cardDeck = "Harry Potter";
+                this.$cardDeckIMG = '<img class="_DeckStyle" src="image/harry-potter-logo-32541.png">'
+                this.$gameHeader = '<img class="_GameHeaderIMG" src="image/HPHeader.png" alt="HP header">'
                 break;
             case "_Pokemon":
                 this.$cardDeck = "Pokemon";
+                this.$cardDeckIMG = '<img class="_DeckStyle" src="image/picachuCard.png">'
+                this.$gameHeader = '<img class="_GameHeaderIMG" src="image/pokemonHeader.png" alt="Pokemon header">'
                 break;
             case "_Flags":
                 this.$cardDeck = "State flags";
+                this.$gameHeader = "State flags"
                 break;
         }
         this.$gameMode = (mode == "_Single" ? "Single player" : "Multi-player");
@@ -74,7 +85,7 @@ class Gui{
         document.getElementById("_GameBoard").style.display = "block"; //Show board
         //Set header
         document.getElementById("_GameHeader").innerHTML = `
-            <h1>${this.$cardDeck} memory game</h1>
+            <h1>${this.$gameHeader}</h1>
             <h2>${this.$gameMode}</h2>`
         //Set grid template according to amount of cards
             boardDisplay.style.gridTemplateColumns =
@@ -87,6 +98,7 @@ class Gui{
                 dealcard.addEventListener("click", (SN) => {
                     newGame.cardClicked(card);
                 });
+                dealcard.innerHTML = this.$cardDeckIMG
                 boardDisplay.appendChild(dealcard)
             }
         this.showTurn();
@@ -108,7 +120,7 @@ class Gui{
         document.getElementById(`_P${active+1}`).textContent = newScore;
     }
     clearOldParams(){
-        console.log("tst")
+        // console.log("tst")
         const boardDisplay = document.getElementById("_Game");
         const cards = document.querySelectorAll("#_Game div");
         for (let card of cards){

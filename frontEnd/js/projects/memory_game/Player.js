@@ -36,12 +36,13 @@ class Player{
             newGameUI.updateScore(this.$number, this.$score);
             if (this.isGameOver() === true){
                 const winner = this.checkWinner();
+                console.log(winner + " " + typeof(winner)) //test
                 newGame.endGame(winner);
                 newGame.reset();
                 return;
             }
             this.changeTurn(this.$number);
-            console.log("tst")
+            console.log("tst not win")
         }
         else{
             // console.log(card1.$number)
@@ -75,5 +76,12 @@ class Player{
         }
         this.$isActive = false;
         newGameUI.showTurn();
+    }
+
+    //test end game
+    testEnd(){
+        for (let card in newGame.$board){
+            newGame.$board[card].$state = "up";
+        }
     }
 }

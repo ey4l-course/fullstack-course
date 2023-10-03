@@ -18,9 +18,8 @@ class Game{
         this.$board = [];
         this.$deck = [];
         this.$players = [];
-        
         this.$state = "_MainMenu";
-        newGameUI.openMenu("_MainMenu")
+        newGameUI.openMenu("_MainMenu")  //Launch main menu UI
     }
     // Set game parameters
     setDeck(param){
