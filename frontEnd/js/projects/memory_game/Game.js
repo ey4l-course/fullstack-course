@@ -53,7 +53,7 @@ class Game{
         this.initiatePlayers();
         this.$players[0].startTurn();
         this.$deck = this.shuffleDeck(this.setDeckSize(this.$gameDiff), 200);
-        this.$board = this.$deck.map((card, index) => card = new Card(card, index));
+        this.$board = this.$deck.map((card, index) => card = new Card(card, index, newGameUI.$deckAPI));
         newGameUI.startGame(this.$state);
         
     }
