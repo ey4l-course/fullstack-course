@@ -9,7 +9,7 @@ class Card{
     changeCardState(){
         if (this.$state ==="down"){
             this.$state = "up";
-            document.getElementById(this.$position).textContent = this.$value;
+            document.getElementById(this.$position).innerHTML = `<img class="_DeckStyle" src="${this.$image}" alt="No Picture to show">`
             return;
         }
         this.$state = "down";
@@ -32,16 +32,19 @@ class Card{
     SetCardImageHP(deckAPI){
         console.log("This is HP " + deckAPI)
     }
-    SetCardImagePoke(deckAPI){
-        const req = new XMLHttpRequest;
-        // alert("test")
-        req.onload = function(){
-            const cardobj = JSON.parse(req.responseText)
-            console.log(cardobj);
-            // debugger;
-        }
-        req.open("GET", deckAPI + this.$value);
-        req.send();
+    async SetCardImagePoke(deckAPI){
+        // const req = new XMLHttpRequest;
+        // req.onload = function(){
+        //     const cardobj = JSON.parse(req.responseText)
+        //     this.$image = cardobj.sprites.other.dream_world.front_default;
+        //     // console.log(this.$image);
+        // }
+        // req.open("GET", deckAPI + this.$value);
+        // req.send();
+        const response = await fetch(deckAPI + this.$value);
+        const cardobj = await response.json();
+        console.log(cardobj.sprites.other.dream_world.front_default);
+        this.$image = cardobj.sprites.other.dream_world.front_default;
     }
     SetCardImageFlags(deckAPI){
         console.log("This is flags")

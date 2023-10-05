@@ -49,7 +49,7 @@ class Player{
             setTimeout(() => {
                 newGame.$board[card1.$position].changeCardState()
                 newGame.$board[card2.$position].changeCardState()
-            }, 2000)
+            }, 1000)
             this.changeTurn(this.$number);
         }
         
