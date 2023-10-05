@@ -21,11 +21,13 @@ h1, h2{
 }
 #_MainMenu{
     display: none;
+    max-width: 100%;
 }
 
 ._MenuItem > img{
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
 }
 ._Menu{
     display: flex;

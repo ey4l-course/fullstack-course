@@ -8,23 +8,21 @@
 <body>
     <script>
         let obj =[];
-        const req = new XMLHttpRequest;
-        req.onload = function(){
-            obj = JSON.parse(this.responseText)
-            // document.write(`<img src=${obj[0].sprites.other.dream_world.front_default}>`)
-            checkImage(obj);
-        }
-        // req.open("GET", "https://pokeapi.co/api/v2/pokemon?limit=200%27");
-        req.open("get", 'https://hp-api.onrender.com/api/characters');
-        req.send();
-        function checkImage(list){
-            const hasimg = [];
-            for (let char in list){
-                if (list[char].image != ""){
-                    hasimg.push(list[char]);
-                };
+
+        fetch("https://pokeapi.co/api/v2/pokemon/1")
+        .then(response => {
+            if (!response.ok) {
+            throw new Error("Network response was not ok");
             }
-        }
+            return response.json();
+        })
+        .then(data => {
+            obj = data;
+            console.log(JSON.stringify(data));
+        })
+        .catch(error => {
+            console.error("There was a problem fetching the data:", error);
+        });
     </script>
     
 </body>
